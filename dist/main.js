@@ -16,7 +16,7 @@
   \**********************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService\r\n\r\n;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(userService.users)\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService\r\n\r\nuserService.getUsers().then(data => {\r\n  ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data)\r\n})\r\n\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?\n}");
 
 /***/ },
 
@@ -36,7 +36,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   UserService: () => (/* binding */ UserService)\n/* harmony export */ });\nclass UserService {\r\n  _users = [\r\n    {\r\n      id: 0,\r\n      name: 'Mark',\r\n      email: 'otto@gmail.com',\r\n      children: true,\r\n      permissions: false\r\n    },\r\n    {\r\n      id: 1,\r\n      name: 'Jacob',\r\n      email: 'thornton@gmail.com',\r\n      children: false,\r\n      permissions: true\r\n    }\r\n  ]\r\n\r\n  get users() {\r\n    return this._users\r\n  }\r\n\r\n  set users(users) {\r\n    this._users = users\r\n  }\r\n\r\n  logger() {\r\n    console.log(this.users);\r\n\r\n  }\r\n}\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/userService.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   UserService: () => (/* binding */ UserService)\n/* harmony export */ });\nclass UserService {\r\n  getUsers() {\r\n    return fetch('http://localhost:4545/users').then(res => res.json())\r\n  }\r\n}\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/userService.js?\n}");
 
 /***/ }
 

@@ -3,4 +3,7 @@ import { UserService } from "./modules/userService";
 
 window.userService = new UserService
 
-render(userService.users)
+userService.getUsers().then(data => {
+  render(data)
+})
+
