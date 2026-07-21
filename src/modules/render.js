@@ -1,5 +1,6 @@
 export const render = (users) => {
   const tbody = document.getElementById('table-body')
+  tbody.innerHTML = ''
 
   users.forEach(user => {
     tbody.insertAdjacentHTML('beforeend', `

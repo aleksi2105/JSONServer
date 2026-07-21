@@ -1,3 +1,5 @@
+import { render } from "./render"
+
 export const addUsers = () => {
   const form = document.querySelector('form')
   const nameInput = form.querySelector('#form-name')
@@ -14,6 +16,10 @@ export const addUsers = () => {
       permissions: false
     }
 
-    console.log(user);
+    userService.addUser(user).then(() => {
+      userService.getUsers().then(users => {
+        render(users)
+      })
+    })
   })
 }

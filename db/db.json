@@ -1,18 +1,33 @@
 {
- "users" : [
-   {
-      "id": 0,
+  "users": [
+    {
+      "id": "0",
       "name": "Mark",
       "email": "otto@gmail.com",
       "children": true,
       "permissions": false
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Jacob",
       "email": "thornton@gmail.com",
       "children": false,
       "permissions": true
+    },
+    {
+      "name": "Александра",
+      "email": "aleksi2105@yandex.ru",
+      "children": true,
+      "permissions": false,
+      "id": "rAL79C9qeYA"
+    },
+    {
+      "name": "Alex",
+      "email": "dwdw@frfr",
+      "children": false,
+      "permissions": false,
+      "id": "RSlZGeSxAhk"
     }
- ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
