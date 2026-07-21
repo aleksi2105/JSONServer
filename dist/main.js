@@ -16,7 +16,17 @@
   \**********************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService\r\n\r\nuserService.getUsers().then(data => {\r\n  ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data)\r\n})\r\n\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n/* harmony import */ var _modules_addUsers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addUsers */ \"./src/modules/addUsers.js\");\n\r\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService\r\n\r\nuserService.getUsers().then(data => {\r\n  ;(0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data)\r\n})\r\n\r\n;(0,_modules_addUsers__WEBPACK_IMPORTED_MODULE_2__.addUsers)()\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?\n}");
+
+/***/ },
+
+/***/ "./src/modules/addUsers.js"
+/*!*********************************!*\
+  !*** ./src/modules/addUsers.js ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addUsers: () => (/* binding */ addUsers)\n/* harmony export */ });\nconst addUsers = () => {\r\n  const form = document.querySelector('form')\r\n  const nameInput = form.querySelector('#form-name')\r\n  const emailInput = form.querySelector('#form-email')\r\n  const childrenInput = form.querySelector('#form-children')\r\n\r\n  form.addEventListener('submit', (e) => {\r\n    e.preventDefault()\r\n\r\n    const user = {\r\n      name: nameInput.value,\r\n      email: emailInput.value,\r\n      children: childrenInput.checked,\r\n      permissions: false\r\n    }\r\n\r\n    console.log(user);\r\n  })\r\n}\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/addUsers.js?\n}");
 
 /***/ },
 
