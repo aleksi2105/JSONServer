@@ -12,4 +12,10 @@ export class UserService {
       body: JSON.stringify(user)
     }).then(res => res.json())
   }
+
+  removeUser(id) {
+    return fetch(`http://localhost:4545/users/${id}`, {
+      method: 'DELETE'
+    }).then(res => res.json())
+  }
 }
